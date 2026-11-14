@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Task Manager</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Task Manager</h1>
+      <span class="date" id="today-date"></span>
+    </header>
+
+    <div class="composer">
+      <input type="text" id="task-input" placeholder="Enter a task" />
+      <button id ="add-task-btn">Add Task</button>
+    </div>
+
+    <div class="toolbar">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All <span id="count-all">0</span></button>
+        <button class="filter-btn" data-filter="active">Active <span id="count-active">0</span></button>
+        <button class="filter-btn" data-filter="completed">Completed <span id="count-done">0</span></button>
+      </div>
+      <button class="clear-btn" id="clear-completed-btn" disabled>Clear completed</button>
+    </div>
+
+    <ul id="task-list"></ul>
+    <p class="empty-state" id="empty-state" hidden>No tasks yet.</p>
+
+    <script type="module" src="/src/renderer.js"></script>
+  </body>
+</html>
