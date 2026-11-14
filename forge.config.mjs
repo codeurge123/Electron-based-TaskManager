@@ -5,6 +5,7 @@ import { MakerRpm } from '@electron-forge/maker-rpm';
 import { VitePlugin } from '@electron-forge/plugin-vite';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
+import { MakerDMG } from '@electron-forge/maker-dmg';
 
 const config = {
   packagerConfig: {
@@ -19,8 +20,18 @@ const config = {
   },
   rebuildConfig: {},
   makers: [
+    // Windows
     new MakerSquirrel({}),
+
+    // macOS
     new MakerZIP({}, ['darwin']),
+    new MakerDMG({
+      format: 'UDZO',
+      name: 'Task Manager',
+      overwrite: true,
+    }),
+
+    // Linux
     new MakerRpm({}),
     new MakerDeb({}),
   ],
