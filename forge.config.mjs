@@ -9,6 +9,13 @@ import { FuseV1Options, FuseVersion } from '@electron/fuses';
 const config = {
   packagerConfig: {
     asar: true,
+    prune: true,
+    ignore: (file) => {
+      if (!file) return false;
+      const keep = file.startsWith('/.vite') || file.startsWith('/node_modules');
+      return !keep;
+    },
+    icon: './assets/icon',
   },
   rebuildConfig: {},
   makers: [

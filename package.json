@@ -1,9 +1,9 @@
 {
-  "name": "electron-app",
-  "productName": "electron-app",
+  "name": "task-manager",
+  "productName": "Task Manager",
   "version": "1.0.0",
   "private": true,
-  "description": "My Electron application description",
+  "description": "A simple task manager application built with Electron and SQLite.",
   "keywords": [],
   "license": "MIT",
   "author": {
